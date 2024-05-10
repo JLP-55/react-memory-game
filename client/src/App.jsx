@@ -12,28 +12,28 @@ const deck = [
 
 console.log(deck);
 function App() {
-  const [shuffle, setShuffle] = useState(/*initial value is an empty array*/[])
+  // const [shuffle, setShuffle] = useState(/*initial value is an empty array*/[])
 
-  // randomise images 
-  const randomise = () => {
-    // spread the deck variable to get all items in the array
-    const cards = [...deck]
-    // calls a function for each item in the array
-    .sort(() => Math.random() - 0.5)
-    .map((card) => ({... card, id: Math.random()}))
+  // // randomise images 
+  // const randomise = () => {
+  //   // spread the deck variable to get all items in the array
+  //   const cards = [...deck]
+  //   // calls a function for each item in the array
+  //   .sort(() => Math.random() - 0.5)
+  //   .map((card) => ({... card, id: Math.random()}))
 
-    // this will change the state by using setShuffle and passing randomise
-    // currently just creates an infinite loop
-    setShuffle(randomise)
-  }
+  //   // this will change the state by using setShuffle and passing randomise
+  //   // currently just creates an infinite loop
+  //   setShuffle(randomise)
+  // }
 
-  console.log(shuffle);
+  // console.log(shuffle);
 
   return (
     <>
       <div>
-        <button onClick={randomise}>click me!</button>
-        {/*<button>click me!</button>*/}
+        {/*<button onClick={randomise}>click me!</button>*/}
+        <button>click me!</button>
       </div>
     </>
   )
