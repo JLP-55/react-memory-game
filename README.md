@@ -1,3 +1,15 @@
+## TODO next:
+
+- go through week18 homework to set up the schemas? At least use the models as some kind of scaffold for models in this react application
+
+**currently:**
+- am unable to post using generic express routes
+- am unable to query using graphql endpoint - see relevant files for notes on error messages
+
+- find and look into the activity `tech thoughts`/`whats on your techy mind` for how to do user authentication with JWT's
+- don't forget about week 18 for mongoose activities to refer to
+- don't forget about week 19 for pwa activities to refer to
+
 ### Project Description
 
 This will be an online game of memory (collect pairs of cards to score points from a standard 52 card deck, laid face down)<br>

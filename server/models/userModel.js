@@ -3,11 +3,18 @@ const {Schema, Model} = require("mongoose");
 
 const userProfile = new Schema (
 	{
+		// do we need a schema id?
+		// _id: {
+		// 	type: Schema.Types.ObjectId	
+		// },
 		username: {
 			type: String,
 			required: true,
 			unique: true,
 			trim: true
+		},
+		latestScore: {
+			type: Number,
 		},
 		email: {
 			type: String,
@@ -15,22 +22,15 @@ const userProfile = new Schema (
 			unique: true,
 			match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
 		},
-		// winCount: [{
-		// 	type: Schema.Types.ObjectId,
-		// 	ref: "userProfile"
-		// }],
-		// lossCount: [{
-		// 	type: Schema.Types.ObjectId,
-		// 	ref: "displossCount"
-		// }]
+		winCount: [{
+			type: Schema.Types.ObjectId,
+			ref: "Leaderboard"
+		}],
+		lossCount: [{
+			type: Schema.Types.ObjectId,
+			ref: "Leaderboard"
+		}]
 	},
-	{
-		toJSON: {
-			virtuals: true,
-			getters: true
-		},
-		id: false,
-	}
 );
 
 // virtual to get the number of wins the user has accumulated

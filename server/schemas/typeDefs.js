@@ -6,8 +6,15 @@ type User {
 }
 
 type Query {
-	classes: [User]
+	firstQuery: [User]
 }
 `;
 
 module.exports = typeDefs;
+
+/*
+!!! has access to the model "User"
+type Query {
+	firstQuery: [User]	
+}
+*/
