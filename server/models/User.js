@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
 	{
@@ -32,6 +33,21 @@ const userSchema = new Schema(
 		}]
 	}
 );
+
+// middleware to create a password
+userSchema.pre("save", async function (next) {
+	if (this.isNew || this.isModified("password")) {
+		const saltRounds = 10;
+		this.password = await bcrypt.hash(this.password, saltRounds);
+	}
+
+	next();
+});
+
+// compare incoming password with hashed password
+userSchema.methods.isCorrectPassword = async function (password) {
+	return bcrypt.compare(password, this.password);
+};
 
 // virtual to get the number of wins the user has accumulated
 // userProfile.virtual("winCount").get(function () {

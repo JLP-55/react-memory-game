@@ -21,6 +21,27 @@ const resolvers = {
         // pass the user into the signToken function
         const token = signToken(user);
         return {user, token};
+      },
+      login: async (parent, {email, password}) => {
+        // find a user, using a specific email
+        const user = await User.findOne({email});
+
+        // check to see if that user exists
+        if(!user) {
+          throw AuthenticationError
+        };
+
+        // await the confirmation of correct password
+        const correctPw = await user.isCorrectPassword(password);
+
+        // check if the password is correct
+        if(!correctPw) {
+          throw AuthenticationError
+        };
+
+        // sign token and return it
+        const token = signToken(user);
+        return {token, user};
       }
     }
 };
