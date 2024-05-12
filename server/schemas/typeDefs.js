@@ -2,10 +2,16 @@ const typeDefs = `
   type User {
     _id: ID
     username: String
-    latestScore: Int
     email: String
+    password: String
+    latestScore: Int
     winCount: [HighScores]
     lossCount:  [HighScores]
+  }
+
+  type Auth {
+    token: ID!
+    user: User 
   }
 
   type HighScores {
@@ -19,6 +25,10 @@ const typeDefs = `
   type Query {
     user: [User]
     highscores: [HighScores]
+  }
+
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth 
   }
 `;
 
