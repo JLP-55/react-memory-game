@@ -1,0 +1,21 @@
+.card {
+	position: relative;
+	height: 110px;
+	width: 20px
+}
+
+.card img {
+	display: block;
+	border: 2px solid #fff;
+	border-radius: 2px;
+}
+
+.front {
+	height: 80px;
+	width: 45px;
+}
+
+.back {
+	height: 80px;
+	width: 45px;
+}

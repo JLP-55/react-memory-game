@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SingleCard from "./components/SingleCard.jsx";
 import './App.css'
 // import "./assets"
 
@@ -8,10 +9,6 @@ const deck = [
   {"src": "/img/ace_of_clubs.png"},
   {"src": "/img/ace_of_hearts.png"},
   {"src": "/img/ace_of_diamonds.png"},
-  {"src": "/img/1_of_spades.png"},
-  {"src": "/img/1_of_clubs.png"},
-  {"src": "/img/1_of_hearts.png"},
-  {"src": "/img/1_of_diamonds.png"},
   {"src": "/img/2_of_spades.png"},
   {"src": "/img/2_of_clubs.png"},
   {"src": "/img/2_of_hearts.png"},
@@ -44,9 +41,9 @@ const deck = [
   {"src": "/img/9_of_clubs.png"},
   {"src": "/img/9_of_hearts.png"},
   {"src": "/img/9_of_diamonds.png"},
-  {"src": "/img/10_o_fspades.png"},
-  {"src": "/img/10_o_clubsf.png"},
-  {"src": "/img/10_o_heartsf.png"},
+  {"src": "/img/10_of_spades.png"},
+  {"src": "/img/10_of_clubs.png"},
+  {"src": "/img/10_of_hearts.png"},
   {"src": "/img/10_of_diamonds.png"},
   {"src": "/img/jack_of_spades.png"},
   {"src": "/img/jack_of_clubs.png"},
@@ -62,7 +59,9 @@ const deck = [
   {"src": "/img/king_of_diamonds.png"},
 ]
 
+// remove this at some point
 console.log(deck);
+
 function App() {
   // useState sets initial value
   const [shuffle, setShuffle] = useState([])
@@ -91,9 +90,16 @@ function App() {
     <>
       <div>
         <button onClick={randomise}>click me!</button>
+        <div className="card-grid">
+          {shuffle.map(card => (
+            // prop to give the card access to the images
+            <SingleCard key={card.id} card={card}/>
+          ))}
+        </div>
       </div>
     </>
   )
 }
 
 export default App
+// export default card?

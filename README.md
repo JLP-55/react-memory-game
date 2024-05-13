@@ -6,7 +6,7 @@
 - am unable to post using generic express routes
 - am unable to query using graphql endpoint - see relevant files for notes on error messages
 
-- find and look into the activity `tech thoughts`/`whats on your techy mind` for how to do user authentication with JWT's
+- find and look into the activity `tech thoughts`/`whats on your techy mind` for how to do user authentication/decode with JWT's `week21/day_03/activity_24`
 - don't forget about week 18 for mongoose activities to refer to
 - don't forget about week 19 for pwa activities to refer to
 
