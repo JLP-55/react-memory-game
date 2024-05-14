@@ -12,32 +12,32 @@ import App from "./App.jsx"
 // import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    // errorElement: <ErrorPage />,
-    // children: [
-    //   {
-    //     index: true,
-    //     element: <Home />
-    //   }, {
-    //     path: '/login',
-    //     element: <Login />
-    //   }, {
-    //     path: '/signup',
-    //     element: <Signup />
-    //   }, {
-    //     path: '/thoughts/:thoughtId',
-    //     element: <SingleThought />
-    //   }
-    // ]
-  },
+	{
+		path: "/",
+		element: <App />,
+		// errorElement: <ErrorPage />,
+		// children: [
+		//   {
+		//     index: true,
+		//     element: <Home />
+		//   }, {
+		//     path: '/login',
+		//     element: <Login />
+		//   }, {
+		//     path: '/signup',
+		//     element: <Signup />
+		//   }, {
+		//     path: '/thoughts/:thoughtId',
+		//     element: <SingleThought />
+		//   }
+		// ]
+	},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
-  // <React.StrictMode>
-  // {/*render something here*/}
-    // {<App />}
-  // </React.StrictMode>,
+	<RouterProvider router={router} />
+	// <React.StrictMode>
+	// {/*render something here*/}
+		// {<App />}
+	// </React.StrictMode>,
 )

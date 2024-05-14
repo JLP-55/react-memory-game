@@ -1,15 +1,15 @@
 {
-  "name": "react-memory-game",
-  "version": "1.0.0",
-  "description": "A small Javascript application/game using React as the front end",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd ./server && npm run watch\" \"cd ./client && npm run dev\""
-  },
-  "author": "Jack Leonard-Pekin",
-  "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+	"name": "react-memory-game",
+	"version": "1.0.0",
+	"description": "A small Javascript application/game using React as the front end",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "concurrently \"cd ./server && npm run watch\" \"cd ./client && npm run dev\""
+	},
+	"author": "Jack Leonard-Pekin",
+	"license": "MIT",
+	"devDependencies": {
+		"concurrently": "^8.2.2"
+	}
 }

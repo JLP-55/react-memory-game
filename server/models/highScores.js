@@ -1,24 +1,24 @@
 const { Schema, model } = require('mongoose');
 
 const scores = new Schema(
-  {
-    user: {
-      type: String,
-      required: true,
-      unique: false,
-    },
-    streak: {
-      type: Number,
-      required: true,
-      unique: false 
-    },
-    wins: {
-      type: Number
-    },
-    losses: {
-      type: Number
-    }
-  }
+	{
+		user: {
+			type: String,
+			required: true,
+			unique: false,
+		},
+		streak: {
+			type: Number,
+			required: true,
+			unique: false 
+		},
+		wins: {
+			type: Number
+		},
+		losses: {
+			type: Number
+		}
+	}
 );
 
 const HighScores = model('HighScores', scores);

@@ -1,36 +1,36 @@
 const typeDefs = `
-  type User {
-    _id: ID
-    username: String
-    email: String
-    password: String
-    latestScore: Int
-    winCount: [HighScores]
-    lossCount:  [HighScores]
-  }
+	type User {
+		_id: ID
+		username: String
+		email: String
+		password: String
+		latestScore: Int
+		winCount: [HighScores]
+		lossCount:  [HighScores]
+	}
 
-  type Auth {
-    token: ID!
-    user: User 
-  }
+	type Auth {
+		token: ID!
+		user: User 
+	}
 
-  type HighScores {
-    _id: ID
-    user: String
-    streak: Int
-    wins: Int
-    losses: Int
-  }
+	type HighScores {
+		_id: ID
+		user: String
+		streak: Int
+		wins: Int
+		losses: Int
+	}
 
-  type Query {
-    user: [User]
-    highscores: [HighScores]
-  }
+	type Query {
+		user: [User]
+		highscores: [HighScores]
+	}
 
-  type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth 
-    login(email: String!, password: String!): Auth
-  }
+	type Mutation {
+		addUser(username: String!, email: String!, password: String!): Auth 
+		login(email: String!, password: String!): Auth
+	}
 `;
 
 module.exports = typeDefs;
