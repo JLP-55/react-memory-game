@@ -16,8 +16,9 @@
 
 a {
 	font-weight: 500;
-	color: #646cff;
+	color: #ab3c3c;
 	text-decoration: inherit;
+	padding: 25px;
 }
 a:hover {
 	color: #535bf2;
@@ -33,7 +34,14 @@ body {
 
 h1 {
 	font-size: 3.2em;
-	line-height: 1.1;
+	line-height: 0.5;
+}
+
+span {
+	color: pink;
+}
+span:hover {
+	color: #535bf2;
 }
 
 button {
@@ -49,7 +57,7 @@ button {
 */
 }
 button:hover {
-	border-color: #646cff;
+	border-color: #ab3c3c;
 }
 button:focus,
 button:focus-visible {

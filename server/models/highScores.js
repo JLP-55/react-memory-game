@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const {User} = require("./User.js");
 
 const scores = new Schema(
 	{
@@ -17,7 +18,14 @@ const scores = new Schema(
 		},
 		losses: {
 			type: Number
-		}
+		},
+	},
+	{
+		toJSON: {
+			getters: true,
+			virtuals: true
+		},
+		id: false
 	}
 );
 

@@ -48,3 +48,48 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 5px;
 }
+
+#header {
+	margin-top: 50px;
+	padding: 50px;
+	position: relative;
+	right: 500px;
+	bottom: 300px;
+} 
+
+#span {
+	color: yellow;
+}
+
+#header-link {
+	color: yellow;
+    position: relative;
+    left: 650px;
+    display: flex;
+    bottom: 205px;
+    font-size: 35px;
+}
+
+.login-link {
+	color: yellow;
+	position: relative;
+	left: 500px;
+}
+
+Link {
+	color: yellow;
+}
+
+.leaderboard {
+	height: 1000px;
+	width: 150px;
+	color: #ab3c3c;
+	background-color: #808080;
+	color: #ab3c3c;
+	font-size: 25px;
+	border: #ab3c3c solid 5px;
+	border-style: inset;
+	border-radius: 3px;
+	position: relative;
+	left: 180px;
+}

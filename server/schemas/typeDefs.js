@@ -6,7 +6,6 @@ const typeDefs = `
 		password: String
 		latestScore: Int
 		winCount: [HighScores]
-		lossCount:  [HighScores]
 	}
 
 	type Auth {

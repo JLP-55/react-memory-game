@@ -23,14 +23,11 @@ const userSchema = new Schema(
 		latestScore: {
 			type: Number,
 		},
-		winCount: [{
+		wincount: [{
 			type: Schema.Types.ObjectId,
-			ref: "Class"
+			// we don't define the reference here, do it in the typeDefs
+			// ref: "Highscores"
 		}],
-		lossCount: [{
-			type: Schema.Types.ObjectId,
-			ref: "Class"
-		}]
 	}
 );
 
@@ -50,10 +47,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 // virtual to get the number of wins the user has accumulated
-// userProfile.virtual("winCount").get(function () {
-// 	const schema = `${this.winCount.length}`;
-// 	return schema
-// });
+userSchema.virtual("otherWinCount").get(function () {
+	const schema = `${this.winCount.length}`;
+	return schema
+});
 
 // // virtual to get the number of losses the user has accumulated
 // lossCount.virtual("lossCount").get(function () {

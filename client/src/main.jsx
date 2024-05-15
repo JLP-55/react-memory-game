@@ -2,42 +2,40 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
+import Auth from "./utils/Auth.js";
 
 // import something to render here
 import App from "./App.jsx"
-// import Home from './pages/Home';
-// import Signup from './pages/Signup';
-// import Login from './pages/Login';
-// import SingleThought from './pages/SingleThought';
-// import ErrorPage from './pages/ErrorPage';
+import Game from './pages/game.jsx';
+import Leaderboard from "./pages/leaderboard.jsx";
+import Signup from "./pages/signup.jsx";
+import Login from "./pages/signup.jsx";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
-		// errorElement: <ErrorPage />,
-		// children: [
-		//   {
-		//     index: true,
-		//     element: <Home />
-		//   }, {
-		//     path: '/login',
-		//     element: <Login />
-		//   }, {
-		//     path: '/signup',
-		//     element: <Signup />
-		//   }, {
-		//     path: '/thoughts/:thoughtId',
-		//     element: <SingleThought />
-		//   }
-		// ]
+		children: [
+			{
+				path: "/game",
+				element: <Game />
+			},
+			{
+				path:"/leaderboard",
+				element: <Leaderboard />
+			},
+			{
+				path: "/signup",
+				element: <Signup />
+			},
+			{
+				path: "/login",
+				element: <Login/>
+			}
+		]
 	},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<RouterProvider router={router} />
-	// <React.StrictMode>
-	// {/*render something here*/}
-		// {<App />}
-	// </React.StrictMode>,
 )
