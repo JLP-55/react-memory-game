@@ -1,4 +1,3 @@
-// !!! ERROR: failed to reload? Due to non existant module
 import decode from "jwt-decode";
 
 class AuthService {

@@ -9,7 +9,7 @@ import App from "./App.jsx"
 import Game from './pages/game.jsx';
 import Leaderboard from "./pages/leaderboard.jsx";
 import Signup from "./pages/signup.jsx";
-import Login from "./pages/signup.jsx";
+import Login from "./pages/login.jsx";
 
 const router = createBrowserRouter([
 	{

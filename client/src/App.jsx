@@ -20,6 +20,7 @@ const httpLink = createHttpLink({
 // this middleware will run whenever we make a request
 const authLink = setContext((_, { headers }) => {
 	// get the authentication token from local storage if it exists
+	// !!! ERROR: it does not exist 
 	const token = localStorage.getItem('id_token');
 	// return the headers to the context so httpLink can read them
 	return {

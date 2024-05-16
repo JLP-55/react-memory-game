@@ -34,6 +34,8 @@ const Signup = () => {
 				variables: { ...formState },
 			});
 
+			console.log(formState);
+			// adds a token to local storage
 			Auth.login(data.addUser.token);
 		} catch (e) {
 			console.error(e);

@@ -7,15 +7,15 @@ export default defineConfig({
 	server: {
 		port: 3000,
 		// this will open the app automatically
-		open: true
+		open: true,
 		// do we only need a proxy for when we build the application?
 		// not sure of the use of a proxy server.
-		// proxy: {
-		//   '/graphql': {
-		//     target: 'http://localhost:3001',
-		//     changeOrigin: true,
-		//     secure: false,
-		//   },     
-		// }
+		proxy: {
+		  '/graphql': {
+		    target: 'http://localhost:3001',
+		    changeOrigin: true,
+		    secure: false,
+		  },     
+		}
 	}
 })

@@ -71,8 +71,8 @@ function Game() {
 	const [shuffle, setShuffle] = useState([]);
 	const [turns, setTurns] = useState(0);
 	// useState for user choices, set to an empty string, not null so that there is an initial value that can be read
-	const [choiceOne, setChoiceOne] = useState("");
-	const [choiceTwo, setChoiceTwo] = useState("");
+	const [choiceOne, setChoiceOne] = useState(null);
+	const [choiceTwo, setChoiceTwo] = useState(null);
 
 	// randomise images 
 	const randomise = () => {
@@ -123,20 +123,179 @@ function Game() {
 			// validate the existanceof both choiceOne and choiceTwo, then check for a match
 			if (choiceOne && choiceTwo) {
 				if (
-					choiceOne.src === deck[0]["src"] &&
-					choiceTwo.src === deck[0]["matchId"] 
+					choiceOne.src === deck[0]["src"] && choiceTwo.src === deck[0]["matchId"]
 					|| /*OR...*/
-					choiceOne.src === deck[0]["matchId"] &&
-					choiceTwo.src === deck[0]["src"]) {
+					choiceOne.src === deck[0]["matchId"] && choiceTwo.src === deck[0]["src"]) {
 					console.log("Match!");
-					// console.log(deckTwo[i]["src"]);
-					// console.log(choiceTwo.src);
-				};
+				resetTurn();
+				} else if (
+					choiceOne.src === deck[2]["src"] && choiceTwo.src === deck[2]["matchId"]
+					||
+					choiceOne.src === deck[2]["src"] && choiceTwo.src === deck[2]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[4]["src"] && choiceTwo.src === deck[4]["matchId"]
+					||
+					choiceOne.src === deck[4]["src"] && choiceTwo.src === deck[4]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[6]["src"] && choiceTwo.src === deck[6]["matchId"]
+					||
+					choiceOne.src === deck[6]["src"] && choiceTwo.src === deck[6]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[8]["src"] && choiceTwo.src === deck[8]["matchId"]
+					||
+					choiceOne.src === deck[8]["src"] && choiceTwo.src === deck[8]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[10]["src"] && choiceTwo.src === deck[10]["matchId"]
+					||
+					choiceOne.src === deck[10]["src"] && choiceTwo.src === deck[10]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[12]["src"] && choiceTwo.src === deck[12]["matchId"]
+					||
+					choiceOne.src === deck[12]["src"] && choiceTwo.src === deck[12]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[14]["src"] && choiceTwo.src === deck[14]["matchId"]
+					||
+					choiceOne.src === deck[14]["src"] && choiceTwo.src === deck[14]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[16]["src"] && choiceTwo.src === deck[16]["matchId"]
+					||
+					choiceOne.src === deck[16]["src"] && choiceTwo.src === deck[16]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[18]["src"] && choiceTwo.src === deck[18]["matchId"]
+					||
+					choiceOne.src === deck[18]["src"] && choiceTwo.src === deck[18]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[20]["src"] && choiceTwo.src === deck[20]["matchId"]
+					||
+					choiceOne.src === deck[20]["src"] && choiceTwo.src === deck[20]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[22]["src"] && choiceTwo.src === deck[22]["matchId"]
+					||
+					choiceOne.src === deck[22]["src"] && choiceTwo.src === deck[22]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[24]["src"] && choiceTwo.src === deck[24]["matchId"]
+					||
+					choiceOne.src === deck[24]["src"] && choiceTwo.src === deck[24]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[26]["src"] && choiceTwo.src === deck[26]["matchId"]
+					||
+					choiceOne.src === deck[26]["src"] && choiceTwo.src === deck[26]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[28]["src"] && choiceTwo.src === deck[28]["matchId"]
+					||
+					choiceOne.src === deck[28]["src"] && choiceTwo.src === deck[28]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[30]["src"] && choiceTwo.src === deck[30]["matchId"]
+					||
+					choiceOne.src === deck[30]["src"] && choiceTwo.src === deck[30]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[32]["src"] && choiceTwo.src === deck[32]["matchId"]
+					||
+					choiceOne.src === deck[32]["src"] && choiceTwo.src === deck[32]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[34]["src"] && choiceTwo.src === deck[34]["matchId"]
+					||
+					choiceOne.src === deck[34]["src"] && choiceTwo.src === deck[34]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[36]["src"] && choiceTwo.src === deck[36]["matchId"]
+					||
+					choiceOne.src === deck[36]["src"] && choiceTwo.src === deck[36]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[38]["src"] && choiceTwo.src === deck[38]["matchId"]
+					||
+					choiceOne.src === deck[38]["src"] && choiceTwo.src === deck[38]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[40]["src"] && choiceTwo.src === deck[40]["matchId"]
+					||
+					choiceOne.src === deck[40]["src"] && choiceTwo.src === deck[40]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[42]["src"] && choiceTwo.src === deck[42]["matchId"]
+					||
+					choiceOne.src === deck[42]["src"] && choiceTwo.src === deck[42]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[44]["src"] && choiceTwo.src === deck[44]["matchId"]
+					||
+					choiceOne.src === deck[44]["src"] && choiceTwo.src === deck[44]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[46]["src"] && choiceTwo.src === deck[46]["matchId"]
+					||
+					choiceOne.src === deck[46]["src"] && choiceTwo.src === deck[46]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[48]["src"] && choiceTwo.src === deck[48]["matchId"]
+					||
+					choiceOne.src === deck[48]["src"] && choiceTwo.src === deck[48]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else if (
+					choiceOne.src === deck[50]["src"] && choiceTwo.src === deck[50]["matchId"]
+					||
+					choiceOne.src === deck[50]["src"] && choiceTwo.src === deck[50]["src"]) {
+					console.log("Match!");
+					resetTurn();
+				} else {
+					console.log("No match!");
+					resetTurn();
+				}
 			};
 			// console.log(choiceOne.src, choiceTwo.src);
 			// console.log(deck[0]["src"]);
 		// }
 	}, [choiceOne, choiceTwo])
+
+	// reset choice and update turn
+	const resetTurn = () => {
+		setChoiceOne(null)
+		setChoiceTwo(null)
+		setTurns(prevTurns => prevTurns +1)
+		console.log(choiceOne.src);
+		console.log(choiceTwo.src);
+	}
 
 
 	// console.log(choiceOne);
@@ -189,4 +348,3 @@ function Game() {
 }
 
 export default Game 
-// exconsole.log("hello");

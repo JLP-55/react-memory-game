@@ -17,7 +17,9 @@ const resolvers = {
 		Mutation: {
 			addUser: async (parent, {username, email, password}) => {
 				// create a new use and define a new variable as said user
+				console.log("User in resolver")
 				const user = await User.create({username, email, password});
+				console.log(user);
 				// pass the user into the signToken function
 				const token = signToken(user);
 				return {user, token};
