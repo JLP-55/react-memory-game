@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import "../components/signup.css";
 
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -77,7 +78,7 @@ const Signup = () => {
 									onChange={handleChange}
 								/>
 								<button
-									className="btn btn-block btn-primary"
+									className="btn-block btn-primary"
 									style={{ cursor: 'pointer' }}
 									type="submit"
 								>

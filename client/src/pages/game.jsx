@@ -65,14 +65,14 @@ const deck = [
 // 	console.log(deckTwo[i]["src"]);
 // };
 
-function App() {
+function Game() {
 	// useState sets initial value
 	// useState for rendering the card images
-	const [shuffle, setShuffle] = useState([])
-	const [turns, setTurns] = useState(0)
+	const [shuffle, setShuffle] = useState([]);
+	const [turns, setTurns] = useState(0);
 	// useState for user choices, set to an empty string, not null so that there is an initial value that can be read
-	const [choiceOne, setChoiceOne] = useState("")
-	const [choiceTwo, setChoiceTwo] = useState("")
+	const [choiceOne, setChoiceOne] = useState("");
+	const [choiceTwo, setChoiceTwo] = useState("");
 
 	// randomise images 
 	const randomise = () => {
@@ -83,8 +83,8 @@ function App() {
 		.map((card) => ({...card, id: Math.random()}))
 
 		// this will change the state by using setShuffle and passing cards 
-		setShuffle(cards)
-		setTurns(0)
+		setShuffle(cards);
+		setTurns(0);
 	}
 	// handle choice event
 	const choiceEvent = (card) => {
@@ -171,7 +171,8 @@ function App() {
 	return (
 		<>
 			<div>
-				<button onClick={randomise}>Start Game</button>
+				<button id="randomise-btn" onClick={randomise}>Randomise Cards</button>
+				<p id="play-prompt-card">Flip cards to find a match</p>
 				<div className="card-grid">
 					{shuffle.map(card => (
 						// prop to give the card access to the images
@@ -187,6 +188,5 @@ function App() {
 	)
 }
 
-export default App
-// export default card?
-
+export default Game 
+// exconsole.log("hello");
