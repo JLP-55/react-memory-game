@@ -1,0 +1,42 @@
+.card {
+	position: relative;
+	height: 110px;
+	width: 10px;
+	padding: 2em;
+}
+
+.card img {
+	display: block;
+	border: 4px solid #ab3c3c;
+	border-radius: 1px;
+	border-style: inset;
+}
+
+.front {
+	height: 80px;
+	width: 45px;
+}
+
+.back {
+	height: 80px;
+	width: 45px;
+}
+
+.card-grid {
+	height: 100px;
+	width: 150px;
+	position: relative;
+	left: 30%;
+	top: -450px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 5px;
+}
+
+#play-prompt-card {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 250px;
+}
+

@@ -1,3 +1,4 @@
-const User = require("./userModel.js");
+const User = require('./User.js');
+const HighScores = require('./HighScores.js');
 
-module.exports = User
+module.exports = {User, HighScores};

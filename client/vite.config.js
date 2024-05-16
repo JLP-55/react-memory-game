@@ -3,10 +3,19 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3001,
-    // this will open the app automatically
-    open: true
-  }
+	plugins: [react()],
+	server: {
+		port: 3000,
+		// this will open the app automatically
+		open: true,
+		// do we only need a proxy for when we build the application?
+		// not sure of the use of a proxy server.
+		proxy: {
+		  '/graphql': {
+		    target: 'http://localhost:3001',
+		    changeOrigin: true,
+		    secure: false,
+		  },     
+		}
+	}
 })

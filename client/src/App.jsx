@@ -1,99 +1,54 @@
-import { useState } from 'react'
-import './App.css'
-// import "./assets"
+import './App.css';
+import {
+	ApolloClient,
+	InMemoryCache,
+	ApolloProvider,
+	createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { Outlet } from 'react-router-dom';
 
-// imports image assets
-const deck = [
-  {"src": "/img/ace_of_spades.png"},
-  {"src": "/img/ace_of_clubs.png"},
-  {"src": "/img/ace_of_hearts.png"},
-  {"src": "/img/ace_of_diamonds.png"},
-  {"src": "/img/1_of_spades.png"},
-  {"src": "/img/1_of_clubs.png"},
-  {"src": "/img/1_of_hearts.png"},
-  {"src": "/img/1_of_diamonds.png"},
-  {"src": "/img/2_of_spades.png"},
-  {"src": "/img/2_of_clubs.png"},
-  {"src": "/img/2_of_hearts.png"},
-  {"src": "/img/2_of_diamonds.png"},
-  {"src": "/img/3_of_spades.png"},
-  {"src": "/img/3_of_clubs.png"},
-  {"src": "/img/3_of_hearts.png"},
-  {"src": "/img/3_of_diamonds.png"},
-  {"src": "/img/4_of_spades.png"},
-  {"src": "/img/4_of_clubs.png"},
-  {"src": "/img/4_of_hearts.png"},
-  {"src": "/img/4_of_diamonds.png"},
-  {"src": "/img/5_of_spades.png"},
-  {"src": "/img/5_of_clubs.png"},
-  {"src": "/img/5_of_hearts.png"},
-  {"src": "/img/5_of_diamonds.png"},
-  {"src": "/img/6_of_spades.png"},
-  {"src": "/img/6_of_clubs.png"},
-  {"src": "/img/6_of_hearts.png"},
-  {"src": "/img/6_of_diamonds.png"},
-  {"src": "/img/7_of_spades.png"},
-  {"src": "/img/7_of_clubs.png"},
-  {"src": "/img/7_of_hearts.png"},
-  {"src": "/img/7_of_diamonds.png"},
-  {"src": "/img/8_of_spades.png"},
-  {"src": "/img/8_of_clubs.png"},
-  {"src": "/img/8_of_hearts.png"},
-  {"src": "/img/8_of_diamonds.png"},
-  {"src": "/img/9_of_spades.png"},
-  {"src": "/img/9_of_clubs.png"},
-  {"src": "/img/9_of_hearts.png"},
-  {"src": "/img/9_of_diamonds.png"},
-  {"src": "/img/10_o_fspades.png"},
-  {"src": "/img/10_o_clubsf.png"},
-  {"src": "/img/10_o_heartsf.png"},
-  {"src": "/img/10_of_diamonds.png"},
-  {"src": "/img/jack_of_spades.png"},
-  {"src": "/img/jack_of_clubs.png"},
-  {"src": "/img/jack_of_hearts.png"},
-  {"src": "/img/jack_of_diamonds.png"},
-  {"src": "/img/queen_of_spades.png"},
-  {"src": "/img/queen_of_clubs.png"},
-  {"src": "/img/queen_of_hearts.png"},
-  {"src": "/img/queen_of_diamonds.png"},
-  {"src": "/img/king_of_spades.png"},
-  {"src": "/img/king_of_clubs.png"},
-  {"src": "/img/king_of_hearts.png"},
-  {"src": "/img/king_of_diamonds.png"},
-]
+import Header from './components/Header';
+// import Footer from './components/Footer';
 
-console.log(deck);
+// Construct our main GraphQL API endpoint
+const httpLink = createHttpLink({
+	uri: '/graphql',
+});
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+// this middleware will run whenever we make a request
+const authLink = setContext((_, { headers }) => {
+	// get the authentication token from local storage if it exists
+	// !!! ERROR: it does not exist 
+	const token = localStorage.getItem('id_token');
+	// return the headers to the context so httpLink can read them
+	return {
+		headers: {
+			// we don't want to destroy any pre-existing headers, so we spread them back in
+			...headers,
+			authorization: token ? `Bearer ${token}` : '',
+		},
+	};
+});
+
+const client = new ApolloClient({
+	// Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+	link: authLink.concat(httpLink),
+	cache: new InMemoryCache(),
+});
+
 function App() {
-  // useState sets initial value
-  const [shuffle, setShuffle] = useState([])
-  const [turns, setTurns] = useState(0)
-
-  // randomise images 
-  const randomise = () => {
-    // spread the deck variable to get all items in the array
-    const cards = [...deck]
-    // calls a function for each item in the array
-    .sort(() => Math.random() - 0.5)
-    .map((card) => ({... card, id: Math.random()}))
-
-    // this will change the state by using setShuffle and passing randomise
-    // currently just creates an infinite loop
-    setShuffle(cards)
-    setTurns(0)
-  }
-
-  // !!! IMPORTANT
-  // !!! ERROR
-  // why are we console.logging twice?
-  console.log(shuffle, turns);
-
-  return (
-    <>
-      <div>
-        <button onClick={randomise}>click me!</button>
-      </div>
-    </>
-  )
+	return (
+		<ApolloProvider client={client}>
+			<div className="flex-column justify-flex-start min-100-vh">
+				<Header />
+				<div className="container">
+					<Outlet />
+				</div>
+			</div>
+		</ApolloProvider>
+	);
 }
 
-export default App
+export default App;
