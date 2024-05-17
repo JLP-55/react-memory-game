@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
-import Auth from "./utils/Auth.js";
+import Auth from "../utils/Auth.js";
 
 // import something to render here
 import App from "./App.jsx"
