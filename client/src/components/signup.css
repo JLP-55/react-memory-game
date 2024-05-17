@@ -14,3 +14,14 @@ main {
 	top: 110px;
 	right: 230px;
 }
+
+.card-header {
+/*	position: relative;
+	left: 5px;
+*/	width: 150px;
+}
+
+.card-body {
+	position: relative;
+	right: 10px;
+}
