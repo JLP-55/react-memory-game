@@ -1,5 +1,5 @@
 import "./singleCard.css";
-import App from "../pages/Game.jsx"
+import App from "../pages/game.jsx"
 
 /*pass a prop "card" to the SingleCard function so that we can render images*/
 function SingleCard({card, handleChoiceEvent}) {
