@@ -42,6 +42,11 @@ h1:hover {
 	background-color: #535bf2;
 	color: #fff;
 }
+.form-btn {
+	position: relative;
+	left: 55px;
+	top: 5px;
+}
 #span {
 	display: flex;
 	font-size: 40px;
@@ -222,12 +227,20 @@ h1:hover {
     font-size: 35px;
 }
 */
-/*
+
 @media screen and (max-width: 1800px) {
 	.btn {
 		left: 200px;
 		height: 50px;
 		width: 55px;
+	}
+
+	#randomise-btn {
+		position: relative;
+		top: -450px;
+		left: 325px;
+		height: 210px;
+		width: 100px;
 	}
 
 	h1 {
@@ -238,4 +251,4 @@ h1:hover {
 		right: 220px;
 	}
 
-}*/
+}

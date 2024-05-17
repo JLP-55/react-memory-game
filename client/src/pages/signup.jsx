@@ -80,7 +80,7 @@ const Signup = () => {
 									onChange={handleChange}
 								/>
 								<button
-									className="btn-block btn-primary"
+									className=" form-btn btn-block btn-primary"
 									style={{ cursor: 'pointer' }}
 									type="submit"
 								>
