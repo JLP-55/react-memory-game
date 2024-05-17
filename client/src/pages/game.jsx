@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import SingleCard from "../components/SingleCard.jsx";
+import SingleCard from "../components/singleCard.jsx";
 import '../App.css';
 // import "./assets"
 
