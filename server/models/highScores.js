@@ -32,7 +32,8 @@ const scores = new Schema(
 	}
 );
 
-// highscores should be a subdocument
+// highscores should be a subdocument on the user model
+// see week18 challenge models for guidence
 const HighScores = model('HighScores', scores);
 const errorHandler = (err) => console.log(err);
 

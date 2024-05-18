@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react(),
+		// config for vitePWA
 		VitePWA({
 			registerType: 'autoUpdate',
 			injectRegister: 'script-defer',
@@ -12,9 +13,9 @@ export default defineConfig({
 				enabled: false
 			},
 			manifest: {
-				name: 'Kittys portfolio with PWA',
-				short_name: 'Kittys portfolio',
-				description: 'Kittys first vite react portfolio with PWA',
+				name: 'A Game of Memory',
+				short_name: 'Memory',
+				description: 'A game where you match unknown cards',
 				theme_color: '#ffffff',
 				icons: [
 				{
