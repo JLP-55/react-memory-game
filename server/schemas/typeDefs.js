@@ -15,10 +15,11 @@ const typeDefs = `
 
 	type HighScores {
 		_id: ID
-		user: String
+		user: [User] 
 		streak: Int
 		wins: Int
 		losses: Int
+		overallTurns: Int
 	}
 
 	type Query {
@@ -29,8 +30,10 @@ const typeDefs = `
 	type Mutation {
 		addUser(username: String!, email: String!, password: String!): Auth 
 		login(email: String!, password: String!): Auth
+		updateTurns(overallTurns: Int!): HighScores
 	}
 `;
+		// error, HighScores not defined, @ line 33
 
 module.exports = typeDefs;
 

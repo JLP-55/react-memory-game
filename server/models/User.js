@@ -25,8 +25,8 @@ const userSchema = new Schema(
 		},
 		wincount: [{
 			type: Schema.Types.ObjectId,
-			// we don't define the reference here, do it in the typeDefs
-			// ref: "Highscores"
+			// we don't define the reference to Highscores model here, do it in the typeDefs
+			ref: "Highscores"
 		}],
 	}
 );

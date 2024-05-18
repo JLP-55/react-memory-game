@@ -5,6 +5,7 @@ class AuthService {
 		return decode(this.getToken());
 	};
 
+	// use auth.loggedin with conditional rendering
 	loggedIn() {
 		const token = this.getToken();
 		return token && !this.isTokenExpired(token) ? true : false;
