@@ -3,11 +3,11 @@ const {User} = require("./User.js");
 
 const scores = new Schema(
 	{
-		user: {
-			type: String,
-			required: true,
-			unique: false,
-		},
+		// user: {
+		// 	type: String,
+		// 	required: true,
+		// 	unique: false,
+		// },
 		streak: {
 			type: Number,
 			required: true,
@@ -19,6 +19,9 @@ const scores = new Schema(
 		losses: {
 			type: Number
 		},
+		overallTurns: {
+			type: Number
+		}
 	},
 	{
 		toJSON: {
@@ -29,6 +32,7 @@ const scores = new Schema(
 	}
 );
 
+// highscores should be a subdocument
 const HighScores = model('HighScores', scores);
 const errorHandler = (err) => console.log(err);
 

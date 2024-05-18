@@ -7,7 +7,8 @@ const resolvers = {
 			return await User.find({})/*.populate('highscores').populate({
 				// what is the significance of the "path" and "populate"?
 				path: 'highscores',
-			});*/
+				populate: "user"
+			})*/;
 		},
 		highscores: async () => {
 			return await HighScores.find({});
@@ -44,6 +45,18 @@ const resolvers = {
 				// sign token and return it
 				const token = signToken(user);
 				return {token, user};
+			},
+			updateTurns: async (parent, {overallTurns}, context) => {
+				if (context.user) {
+					const user = await User.findByIdAndUpdate(context.user._id, {
+						/*What should I insert here?
+						How do I get the turns from the client side and add them to the database?*/
+						// put what I want to update here
+						// use subdocument means I can use findbyidandupdate
+					})
+
+				}
+				// look up user and get highscores based on the user.
 			}
 		}
 };

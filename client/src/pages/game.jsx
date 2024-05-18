@@ -6,58 +6,58 @@ import '../App.css';
 // imports image assets
 const deck = [
 	// if choiceOne = deck.src && choiceTwo = deck.matchId ... Match!
-	{"src": "/img/ace_of_spades.png", "matchId": "/img/ace_of_clubs.png"},
-	{"src": "/img/ace_of_clubs.png", "matchId": "/img/ace_of_spades.png"},
-	{"src": "/img/ace_of_hearts.png", "matchId": "/img/ace_of_diamonds.png"},
-	{"src": "/img/ace_of_diamonds.png", "matchId": "/img/ace_of_hearts.png"},
-	{"src": "/img/2_of_spades.png", "matchId": "/img/2_of_clubs.png"},
-	{"src": "/img/2_of_clubs.png", "matchId": "/img/2_of_spades.png"},
-	{"src": "/img/2_of_hearts.png", "matchId": "/img/2_of_diamonds.png"},
-	{"src": "/img/2_of_diamonds.png", "matchId": "/img/2_of_hearts.png"},
-	{"src": "/img/3_of_spades.png", "matchId": "/img/3_of_clubs.png"},
-	{"src": "/img/3_of_clubs.png", "matchId": "/img/3_of_spades.png"},
-	{"src": "/img/3_of_hearts.png", "matchId": "/img/3_of_diamonds.png"},
-	{"src": "/img/3_of_diamonds.png", "matchId": "/img/3_of_hearts.png"},
-	{"src": "/img/4_of_spades.png", "matchId": "/img/4_of_clubs.png"},
-	{"src": "/img/4_of_clubs.png", "matchId": "/img/4_of_spades.png"},
-	{"src": "/img/4_of_hearts.png", "matchId": "/img/4_of_diamonds.png"},
-	{"src": "/img/4_of_diamonds.png", "matchId": "/img/4_of_hearts.png"},
-	{"src": "/img/5_of_spades.png", "matchId": "/img/5_of_clubs.png"},
-	{"src": "/img/5_of_clubs.png", "matchId": "/img/5_of_spades.png"},
-	{"src": "/img/5_of_hearts.png", "matchId": "/img/5_of_diamonds.png"},
-	{"src": "/img/5_of_diamonds.png", "matchId": "/img/5_of_hearts.png"},
-	{"src": "/img/6_of_spades.png", "matchId": "/img/6_of_clubs.png"},
-	{"src": "/img/6_of_clubs.png", "matchId": "/img/6_of_spades.png"},
-	{"src": "/img/6_of_hearts.png", "matchId": "/img/6_of_diamonds.png"},
-	{"src": "/img/6_of_diamonds.png", "matchId": "/img/6_of_hearts.png"},
-	{"src": "/img/7_of_spades.png", "matchId": "/img/7_of_clubs.png"},
-	{"src": "/img/7_of_clubs.png", "matchId": "/img/7_of_spades.png"},
-	{"src": "/img/7_of_hearts.png", "matchId": "/img/7_of_diamonds.png"},
-	{"src": "/img/7_of_diamonds.png", "matchId": "/img/7_of_hearts.png"},
-	{"src": "/img/8_of_spades.png", "matchId": "/img/8_of_clubs.png"},
-	{"src": "/img/8_of_clubs.png", "matchId": "/img/8_of_spades.png"},
-	{"src": "/img/8_of_hearts.png", "matchId": "/img/8_of_diamonds.png"},
-	{"src": "/img/8_of_diamonds.png", "matchId": "/img/8_of_hearts.png"},
-	{"src": "/img/9_of_spades.png", "matchId": "/img/9_of_clubs.png"},
-	{"src": "/img/9_of_clubs.png", "matchId": "/img/9_of_spades.png"},
-	{"src": "/img/9_of_hearts.png", "matchId": "/img/9_of_diamonds.png"},
-	{"src": "/img/9_of_diamonds.png", "matchId": "/img/9_of_hearts.png"},
-	{"src": "/img/10_of_spades.png", "matchId": "/img/10_of_clubs.png"},
-	{"src": "/img/10_of_clubs.png", "matchId": "/img/10_of_spades.png"},
-	{"src": "/img/10_of_hearts.png", "matchId": "/img/10_of_diamonds.png"},
-	{"src": "/img/10_of_diamonds.png", "matchId": "/img/10_of_hearts.png"},
-	{"src": "/img/jack_of_spades.png", "matchId": "/img/jack_of_clubs.png"},
-	{"src": "/img/jack_of_clubs.png", "matchId": "/img/jack_of_spades.png"},
-	{"src": "/img/jack_of_hearts.png", "matchId": "/img/jack_of_diamonds.png"},
-	{"src": "/img/jack_of_diamonds.png", "matchId": "/img/jack_of_hearts.png"},
-	{"src": "/img/queen_of_spades.png", "matchId": "/img/queen_of_clubs.png"},
-	{"src": "/img/queen_of_clubs.png", "matchId": "/img/queen_of_spades.png"},
-	{"src": "/img/queen_of_hearts.png", "matchId": "/img/queen_of_diamonds.png"},
-	{"src": "/img/queen_of_diamonds.png", "matchId": "/img/queen_of_hearts.png"},
-	{"src": "/img/king_of_spades.png", "matchId": "/img/king_of_clubs.png"},
-	{"src": "/img/king_of_clubs.png", "matchId": "/img/king_of_spades.png"},
-	{"src": "/img/king_of_hearts.png", "matchId": "/img/king_of_diamonds.png"},
-	{"src": "/img/king_of_diamonds.png", "matchId": "/img/king_of_hearts.png"},
+	{"src": "/img/ace_of_spades.png", "matchId": "/img/ace_of_clubs.png", matched: false},
+	{"src": "/img/ace_of_clubs.png", "matchId": "/img/ace_of_spades.png", matched: false},
+	{"src": "/img/ace_of_hearts.png", "matchId": "/img/ace_of_diamonds.png", matched: false},
+	{"src": "/img/ace_of_diamonds.png", "matchId": "/img/ace_of_hearts.png", matched: false},
+	{"src": "/img/2_of_spades.png", "matchId": "/img/2_of_clubs.png", matched: false},
+	{"src": "/img/2_of_clubs.png", "matchId": "/img/2_of_spades.png", matched: false},
+	{"src": "/img/2_of_hearts.png", "matchId": "/img/2_of_diamonds.png", matched: false},
+	{"src": "/img/2_of_diamonds.png", "matchId": "/img/2_of_hearts.png", matched: false},
+	{"src": "/img/3_of_spades.png", "matchId": "/img/3_of_clubs.png", matched: false},
+	{"src": "/img/3_of_clubs.png", "matchId": "/img/3_of_spades.png", matched: false},
+	{"src": "/img/3_of_hearts.png", "matchId": "/img/3_of_diamonds.png", matched: false},
+	{"src": "/img/3_of_diamonds.png", "matchId": "/img/3_of_hearts.png", matched: false},
+	{"src": "/img/4_of_spades.png", "matchId": "/img/4_of_clubs.png", matched: false},
+	{"src": "/img/4_of_clubs.png", "matchId": "/img/4_of_spades.png", matched: false},
+	{"src": "/img/4_of_hearts.png", "matchId": "/img/4_of_diamonds.png", matched: false},
+	{"src": "/img/4_of_diamonds.png", "matchId": "/img/4_of_hearts.png", matched: false},
+	{"src": "/img/5_of_spades.png", "matchId": "/img/5_of_clubs.png", matched: false},
+	{"src": "/img/5_of_clubs.png", "matchId": "/img/5_of_spades.png", matched: false},
+	{"src": "/img/5_of_hearts.png", "matchId": "/img/5_of_diamonds.png", matched: false},
+	{"src": "/img/5_of_diamonds.png", "matchId": "/img/5_of_hearts.png", matched: false},
+	{"src": "/img/6_of_spades.png", "matchId": "/img/6_of_clubs.png", matched: false},
+	{"src": "/img/6_of_clubs.png", "matchId": "/img/6_of_spades.png", matched: false},
+	{"src": "/img/6_of_hearts.png", "matchId": "/img/6_of_diamonds.png", matched: false},
+	{"src": "/img/6_of_diamonds.png", "matchId": "/img/6_of_hearts.png", matched: false},
+	{"src": "/img/7_of_spades.png", "matchId": "/img/7_of_clubs.png", matched: false},
+	{"src": "/img/7_of_clubs.png", "matchId": "/img/7_of_spades.png", matched: false},
+	{"src": "/img/7_of_hearts.png", "matchId": "/img/7_of_diamonds.png", matched: false},
+	{"src": "/img/7_of_diamonds.png", "matchId": "/img/7_of_hearts.png", matched: false},
+	{"src": "/img/8_of_spades.png", "matchId": "/img/8_of_clubs.png", matched: false},
+	{"src": "/img/8_of_clubs.png", "matchId": "/img/8_of_spades.png", matched: false},
+	{"src": "/img/8_of_hearts.png", "matchId": "/img/8_of_diamonds.png", matched: false},
+	{"src": "/img/8_of_diamonds.png", "matchId": "/img/8_of_hearts.png", matched: false},
+	{"src": "/img/9_of_spades.png", "matchId": "/img/9_of_clubs.png", matched: false},
+	{"src": "/img/9_of_clubs.png", "matchId": "/img/9_of_spades.png", matched: false},
+	{"src": "/img/9_of_hearts.png", "matchId": "/img/9_of_diamonds.png", matched: false},
+	{"src": "/img/9_of_diamonds.png", "matchId": "/img/9_of_hearts.png", matched: false},
+	{"src": "/img/10_of_spades.png", "matchId": "/img/10_of_clubs.png", matched: false},
+	{"src": "/img/10_of_clubs.png", "matchId": "/img/10_of_spades.png", matched: false},
+	{"src": "/img/10_of_hearts.png", "matchId": "/img/10_of_diamonds.png", matched: false},
+	{"src": "/img/10_of_diamonds.png", "matchId": "/img/10_of_hearts.png", matched: false},
+	{"src": "/img/jack_of_spades.png", "matchId": "/img/jack_of_clubs.png", matched: false},
+	{"src": "/img/jack_of_clubs.png", "matchId": "/img/jack_of_spades.png", matched: false},
+	{"src": "/img/jack_of_hearts.png", "matchId": "/img/jack_of_diamonds.png", matched: false},
+	{"src": "/img/jack_of_diamonds.png", "matchId": "/img/jack_of_hearts.png", matched: false},
+	{"src": "/img/queen_of_spades.png", "matchId": "/img/queen_of_clubs.png", matched: false},
+	{"src": "/img/queen_of_clubs.png", "matchId": "/img/queen_of_spades.png", matched: false},
+	{"src": "/img/queen_of_hearts.png", "matchId": "/img/queen_of_diamonds.png", matched: false},
+	{"src": "/img/queen_of_diamonds.png", "matchId": "/img/queen_of_hearts.png", matched: false},
+	{"src": "/img/king_of_spades.png", "matchId": "/img/king_of_clubs.png", matched: false},
+	{"src": "/img/king_of_clubs.png", "matchId": "/img/king_of_spades.png", matched: false},
+	{"src": "/img/king_of_hearts.png", "matchId": "/img/king_of_diamonds.png", matched: false},
+	{"src": "/img/king_of_diamonds.png", "matchId": "/img/king_of_hearts.png", matched: false},
 ]
 
 // for (let i = 0; i < 52; i++) {
@@ -97,7 +97,7 @@ function Game() {
 		// set the value of choiceOne, based on the users choice, and pass in the card
 		choiceOne
 			? setChoiceTwo(card)
-			: setChoiceOne(card)
+			: setChoiceOne(card);
 
 		// console.log(card.src);
 
@@ -126,177 +126,171 @@ function Game() {
 					choiceOne.src === deck[0]["src"] && choiceTwo.src === deck[0]["matchId"]
 					|| /*OR...*/
 					choiceOne.src === deck[0]["matchId"] && choiceTwo.src === deck[0]["src"]) {
-					console.log("Match!");
-				resetTurn();
+					console.log("match");
+/*					setShuffle(previousCards => {
+						console.log(previousCards);
+						console.log(choiceOne.src, choiceTwo.src);
+						// needs to return all cards, plus deck[i]
+						return previousCards.map((card, i ) => {
+							console.log(card.src);
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+								// console.log to test the matched status
+								console.log(card.matched);
+								console.log({...card});
+								// does not maintain integrity of deck, overwrites instead
+								return {...card, matched: true};
+							} else {
+								return card;
+								console.log(card);
+							}
+						})
+					});
+*/					console.log("match");
+					resetTurn();
 				} else if (
 					choiceOne.src === deck[2]["src"] && choiceTwo.src === deck[2]["matchId"]
 					||
-					choiceOne.src === deck[2]["src"] && choiceTwo.src === deck[2]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[2]["matchId"] && choiceTwo.src === deck[2]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[4]["src"] && choiceTwo.src === deck[4]["matchId"]
 					||
-					choiceOne.src === deck[4]["src"] && choiceTwo.src === deck[4]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[4]["matchId"] && choiceTwo.src === deck[4]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[6]["src"] && choiceTwo.src === deck[6]["matchId"]
 					||
-					choiceOne.src === deck[6]["src"] && choiceTwo.src === deck[6]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[6]["matchId"] && choiceTwo.src === deck[6]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[8]["src"] && choiceTwo.src === deck[8]["matchId"]
 					||
-					choiceOne.src === deck[8]["src"] && choiceTwo.src === deck[8]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[8]["matchId"] && choiceTwo.src === deck[8]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[10]["src"] && choiceTwo.src === deck[10]["matchId"]
 					||
-					choiceOne.src === deck[10]["src"] && choiceTwo.src === deck[10]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[10]["matchId"] && choiceTwo.src === deck[10]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[12]["src"] && choiceTwo.src === deck[12]["matchId"]
 					||
-					choiceOne.src === deck[12]["src"] && choiceTwo.src === deck[12]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[12]["matchId"] && choiceTwo.src === deck[12]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[14]["src"] && choiceTwo.src === deck[14]["matchId"]
 					||
-					choiceOne.src === deck[14]["src"] && choiceTwo.src === deck[14]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[14]["matchId"] && choiceTwo.src === deck[14]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[16]["src"] && choiceTwo.src === deck[16]["matchId"]
 					||
-					choiceOne.src === deck[16]["src"] && choiceTwo.src === deck[16]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[16]["matchId"] && choiceTwo.src === deck[16]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[18]["src"] && choiceTwo.src === deck[18]["matchId"]
 					||
-					choiceOne.src === deck[18]["src"] && choiceTwo.src === deck[18]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[18]["matchId"] && choiceTwo.src === deck[18]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[20]["src"] && choiceTwo.src === deck[20]["matchId"]
 					||
-					choiceOne.src === deck[20]["src"] && choiceTwo.src === deck[20]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[20]["matchId"] && choiceTwo.src === deck[20]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[22]["src"] && choiceTwo.src === deck[22]["matchId"]
 					||
-					choiceOne.src === deck[22]["src"] && choiceTwo.src === deck[22]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[22]["matchId"] && choiceTwo.src === deck[22]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[24]["src"] && choiceTwo.src === deck[24]["matchId"]
 					||
-					choiceOne.src === deck[24]["src"] && choiceTwo.src === deck[24]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[24]["matchId"] && choiceTwo.src === deck[24]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[26]["src"] && choiceTwo.src === deck[26]["matchId"]
 					||
-					choiceOne.src === deck[26]["src"] && choiceTwo.src === deck[26]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[26]["matchId"] && choiceTwo.src === deck[26]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[28]["src"] && choiceTwo.src === deck[28]["matchId"]
 					||
-					choiceOne.src === deck[28]["src"] && choiceTwo.src === deck[28]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[28]["matchId"] && choiceTwo.src === deck[28]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[30]["src"] && choiceTwo.src === deck[30]["matchId"]
 					||
-					choiceOne.src === deck[30]["src"] && choiceTwo.src === deck[30]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[30]["matchId"] && choiceTwo.src === deck[30]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[32]["src"] && choiceTwo.src === deck[32]["matchId"]
 					||
-					choiceOne.src === deck[32]["src"] && choiceTwo.src === deck[32]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[32]["matchId"] && choiceTwo.src === deck[32]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[34]["src"] && choiceTwo.src === deck[34]["matchId"]
 					||
-					choiceOne.src === deck[34]["src"] && choiceTwo.src === deck[34]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[34]["matchId"] && choiceTwo.src === deck[34]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[36]["src"] && choiceTwo.src === deck[36]["matchId"]
 					||
-					choiceOne.src === deck[36]["src"] && choiceTwo.src === deck[36]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[36]["matchId"] && choiceTwo.src === deck[36]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[38]["src"] && choiceTwo.src === deck[38]["matchId"]
 					||
-					choiceOne.src === deck[38]["src"] && choiceTwo.src === deck[38]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[38]["matchId"] && choiceTwo.src === deck[38]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[40]["src"] && choiceTwo.src === deck[40]["matchId"]
 					||
-					choiceOne.src === deck[40]["src"] && choiceTwo.src === deck[40]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[40]["matchId"] && choiceTwo.src === deck[40]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[42]["src"] && choiceTwo.src === deck[42]["matchId"]
 					||
-					choiceOne.src === deck[42]["src"] && choiceTwo.src === deck[42]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[42]["matchId"] && choiceTwo.src === deck[42]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[44]["src"] && choiceTwo.src === deck[44]["matchId"]
 					||
-					choiceOne.src === deck[44]["src"] && choiceTwo.src === deck[44]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[44]["matchId"] && choiceTwo.src === deck[44]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[46]["src"] && choiceTwo.src === deck[46]["matchId"]
 					||
-					choiceOne.src === deck[46]["src"] && choiceTwo.src === deck[46]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[46]["matchId"] && choiceTwo.src === deck[46]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[48]["src"] && choiceTwo.src === deck[48]["matchId"]
 					||
-					choiceOne.src === deck[48]["src"] && choiceTwo.src === deck[48]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[48]["matchId"] && choiceTwo.src === deck[48]["src"]) {
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[50]["src"] && choiceTwo.src === deck[50]["matchId"]
 					||
-					choiceOne.src === deck[50]["src"] && choiceTwo.src === deck[50]["src"]) {
-					console.log("Match!");
+					choiceOne.src === deck[50]["matchId"] && choiceTwo.src === deck[50]["src"]) {
 					resetTurn();
 				} else {
-					console.log("No match!");
 					resetTurn();
 				}
 			};
 			// console.log(choiceOne.src, choiceTwo.src);
 			// console.log(deck[0]["src"]);
 		// }
-	}, [choiceOne, choiceTwo])
+		console.log(deck[1]);
+	}, [choiceOne, choiceTwo]);
 
 	// reset choice and update turn
 	const resetTurn = () => {
-		setChoiceOne(null)
-		setChoiceTwo(null)
-		setTurns(prevTurns => prevTurns +1)
+		setChoiceOne(null);
+		setChoiceTwo(null);
+		setTurns(prevTurns => prevTurns +1);
 		console.log(choiceOne.src);
 		console.log(choiceTwo.src);
-	}
-
+		console.log(turns);
+	};
 
 	// console.log(choiceOne);
 	// for (let i = 0; i < 52; i++) {
