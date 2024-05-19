@@ -48,12 +48,17 @@ const resolvers = {
 			},
 			updateTurns: async (parent, {overallTurns}, context) => {
 				if (context.user) {
-					const user = await User.findByIdAndUpdate(context.user._id, {
+					const turns = new User({wincount});
+					const user = await User.findByIdAndUpdate(context.user.id, {
+						$push: {wincount: turns},
+						// overallTurns,
+						// new: true
 						/*What should I insert here?
 						How do I get the turns from the client side and add them to the database?*/
 						// put what I want to update here
 						// use subdocument means I can use findbyidandupdate, highscores will be an o
-					})
+					});
+					return turns
 
 				}
 				// look up user and get highscores based on the user.
