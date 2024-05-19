@@ -4,7 +4,7 @@ import '../App.css';
 // import "./assets"
 
 // imports image assets
-const deck = [
+const deck = [ 
 	// if choiceOne = deck.src && choiceTwo = deck.matchId ... Match!
 	{"src": "/img/ace_of_spades.png", "matchId": "/img/ace_of_clubs.png", matched: false},
 	{"src": "/img/ace_of_clubs.png", "matchId": "/img/ace_of_spades.png", matched: false},
@@ -60,10 +60,6 @@ const deck = [
 	{"src": "/img/king_of_diamonds.png", "matchId": "/img/king_of_hearts.png", matched: false},
 ]
 
-// for (let i = 0; i < 52; i++) {
-// 	console.log(deck[i]["src"]);
-// 	console.log(deckTwo[i]["src"]);
-// };
 
 function Game() {
 	// useState sets initial value
@@ -88,198 +84,526 @@ function Game() {
 	}
 	// handle choice event
 	const choiceEvent = (card) => {
-		// console.log("event test")
-		// loop through the array of cards
-		// for (let i = 0; i < card.length; i++) {
-		// 	console.log(card);
-		// }
-
 		// set the value of choiceOne, based on the users choice, and pass in the card
 		choiceOne
 			? setChoiceTwo(card)
 			: setChoiceOne(card);
-
-		// console.log(card.src);
-
-		// console.log(choiceOne)
-		// console.log(choiceTwo)
-
-		// for (let i = 0; i < 5; i++) {
-			// if (choiceOne === choiceTwo) {
-			// 	console.log("match");
-			// }
-		// }
 	};
 
 	// compare two cards
 	// use effect will fire initially upon page load, and again when a dependancy changes
 	useEffect(() => {
-		// console.log(deck[0]["matchId"]);
-		// console.log(deck.matchId);
-			// console.log(choiceOne.src, choiceTwo.src);
-			// console.log(deck[0]["src"]);
-			// console.log(deck[0]["matchId"]);
-		// for (let i = 0; i < 52; i++) {
-			// validate the existanceof both choiceOne and choiceTwo, then check for a match
 			if (choiceOne && choiceTwo) {
 				if (
 					choiceOne.src === deck[0]["src"] && choiceTwo.src === deck[0]["matchId"]
 					|| /*OR...*/
 					choiceOne.src === deck[0]["matchId"] && choiceTwo.src === deck[0]["src"]) {
-					console.log("match");
-/*					setShuffle(previousCards => {
-						console.log(previousCards);
-						console.log(choiceOne.src, choiceTwo.src);
+					setShuffle(previousCards => {
+						// console.log(previousCards);
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
 						// needs to return all cards, plus deck[i]
-						return previousCards.map((card, i ) => {
-							console.log(card.src);
+						return previousCards.map((card, i) => {
+							// console.log(card);
+							// console.log(i);
 							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
 								// console.log to test the matched status
-								console.log(card.matched);
-								console.log({...card});
-								// does not maintain integrity of deck, overwrites instead
+								setTimeout(() => {
+									// you will have to select the same match again to see an update.
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								}, 1000);
+								// console.log({...card});
+								// return a new matched property
 								return {...card, matched: true};
 							} else {
 								return card;
-								console.log(card);
+								// console.log(card);
 							}
 						})
 					});
-*/					console.log("match");
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[2]["src"] && choiceTwo.src === deck[2]["matchId"]
 					||
 					choiceOne.src === deck[2]["matchId"] && choiceTwo.src === deck[2]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[4]["src"] && choiceTwo.src === deck[4]["matchId"]
 					||
 					choiceOne.src === deck[4]["matchId"] && choiceTwo.src === deck[4]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[6]["src"] && choiceTwo.src === deck[6]["matchId"]
 					||
 					choiceOne.src === deck[6]["matchId"] && choiceTwo.src === deck[6]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[8]["src"] && choiceTwo.src === deck[8]["matchId"]
 					||
 					choiceOne.src === deck[8]["matchId"] && choiceTwo.src === deck[8]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[10]["src"] && choiceTwo.src === deck[10]["matchId"]
 					||
 					choiceOne.src === deck[10]["matchId"] && choiceTwo.src === deck[10]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[12]["src"] && choiceTwo.src === deck[12]["matchId"]
 					||
 					choiceOne.src === deck[12]["matchId"] && choiceTwo.src === deck[12]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[14]["src"] && choiceTwo.src === deck[14]["matchId"]
 					||
 					choiceOne.src === deck[14]["matchId"] && choiceTwo.src === deck[14]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[16]["src"] && choiceTwo.src === deck[16]["matchId"]
 					||
 					choiceOne.src === deck[16]["matchId"] && choiceTwo.src === deck[16]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[18]["src"] && choiceTwo.src === deck[18]["matchId"]
 					||
 					choiceOne.src === deck[18]["matchId"] && choiceTwo.src === deck[18]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[20]["src"] && choiceTwo.src === deck[20]["matchId"]
 					||
 					choiceOne.src === deck[20]["matchId"] && choiceTwo.src === deck[20]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[22]["src"] && choiceTwo.src === deck[22]["matchId"]
 					||
 					choiceOne.src === deck[22]["matchId"] && choiceTwo.src === deck[22]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[24]["src"] && choiceTwo.src === deck[24]["matchId"]
 					||
 					choiceOne.src === deck[24]["matchId"] && choiceTwo.src === deck[24]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[26]["src"] && choiceTwo.src === deck[26]["matchId"]
 					||
 					choiceOne.src === deck[26]["matchId"] && choiceTwo.src === deck[26]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[28]["src"] && choiceTwo.src === deck[28]["matchId"]
 					||
 					choiceOne.src === deck[28]["matchId"] && choiceTwo.src === deck[28]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[30]["src"] && choiceTwo.src === deck[30]["matchId"]
 					||
 					choiceOne.src === deck[30]["matchId"] && choiceTwo.src === deck[30]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[32]["src"] && choiceTwo.src === deck[32]["matchId"]
 					||
 					choiceOne.src === deck[32]["matchId"] && choiceTwo.src === deck[32]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[34]["src"] && choiceTwo.src === deck[34]["matchId"]
 					||
 					choiceOne.src === deck[34]["matchId"] && choiceTwo.src === deck[34]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[36]["src"] && choiceTwo.src === deck[36]["matchId"]
 					||
 					choiceOne.src === deck[36]["matchId"] && choiceTwo.src === deck[36]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[38]["src"] && choiceTwo.src === deck[38]["matchId"]
 					||
 					choiceOne.src === deck[38]["matchId"] && choiceTwo.src === deck[38]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[40]["src"] && choiceTwo.src === deck[40]["matchId"]
 					||
 					choiceOne.src === deck[40]["matchId"] && choiceTwo.src === deck[40]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[42]["src"] && choiceTwo.src === deck[42]["matchId"]
 					||
 					choiceOne.src === deck[42]["matchId"] && choiceTwo.src === deck[42]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[44]["src"] && choiceTwo.src === deck[44]["matchId"]
 					||
 					choiceOne.src === deck[44]["matchId"] && choiceTwo.src === deck[44]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[46]["src"] && choiceTwo.src === deck[46]["matchId"]
 					||
 					choiceOne.src === deck[46]["matchId"] && choiceTwo.src === deck[46]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[48]["src"] && choiceTwo.src === deck[48]["matchId"]
 					||
 					choiceOne.src === deck[48]["matchId"] && choiceTwo.src === deck[48]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else if (
 					choiceOne.src === deck[50]["src"] && choiceTwo.src === deck[50]["matchId"]
 					||
 					choiceOne.src === deck[50]["matchId"] && choiceTwo.src === deck[50]["src"]) {
+					setShuffle(previousCards => {
+						console.log("src =", choiceOne.src, choiceTwo.src);
+						console.log("matchId =", choiceOne.matchId, choiceTwo.matchId);
+						return previousCards.map((card, i) => {
+							if (card.src === choiceTwo.src || card.src === choiceOne.src) {
+									console.log("THE CARD IS MATCHED!", card.matched);
+									console.log(previousCards);
+								return {...card, matched: true};
+							} else {
+								return card;
+							}
+						})
+					});
+					console.log("match");
 					resetTurn();
 				} else {
 					resetTurn();
+					console.log("no match")
 				}
 			};
-			// console.log(choiceOne.src, choiceTwo.src);
-			// console.log(deck[0]["src"]);
-		// }
-		console.log(deck[1]);
 	}, [choiceOne, choiceTwo]);
 
 	// reset choice and update turn
@@ -287,45 +611,18 @@ function Game() {
 		setChoiceOne(null);
 		setChoiceTwo(null);
 		setTurns(prevTurns => prevTurns +1);
-		console.log(choiceOne.src);
-		console.log(choiceTwo.src);
+		// console.log(choiceOne.src);
+		// console.log(choiceTwo.src);
+		// console.log(choiceTwo.matchId);
 		console.log(turns);
+		// console.log(deck[0]["matched"])
 	};
-
-	// console.log(choiceOne);
-	// for (let i = 0; i < 52; i++) {
-	// 	const card = deck[i];
-	// 	if (card === card) {
-	// 		console.log(card);
-	// 	}
-	// }
-
-	// const compareChoices = {
-	// 	choiceOne: deckTwo[0],
-	// 	choiceTwo: deck[0]
-	// }
-
-	// will not log the deck[i] to the console and cannot compare it to the user choice to trigger the if statement
-	// for (let i = 0; i < 5; i++) {
-		// console.log(deck[0]);
-		// console.log(deckTwo[0]);
-
-	// !!! NOTE - target the "src" from both the choice and the index of the array you want to target.
-	// !!! NOTE - "src" is an object? Cannot match src against the user choice currently as 
-	// 	console.log(choiceOne);
-		// console.log(deck[0]['src']);
-	// 	// console.log(choiceTwo);
-	// 	// if (choiceOne == choiceTwo) {
-	// 	if (choiceOne == deck[0]) {
-	// 		console.log("Match!");
-	// 	}
-	// }
 
 	return (
 		<>
 			<div>
 				<button id="randomise-btn" onClick={randomise}>Randomise Cards</button>
-				<p id="play-prompt-card">Flip cards to find a match</p>
+				<p id="play-prompt-card">Flip cards to find a match.<span>Match like colours and numbers</span></p>
 				<div className="card-grid">
 					{shuffle.map(card => (
 						// prop to give the card access to the images
