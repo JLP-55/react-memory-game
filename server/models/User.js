@@ -1,6 +1,14 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require("bcrypt");
 
+// const scores = new Schema(
+// 	{
+// 		totalPoints: {
+// 			type: Number
+// 		}
+// 	}
+// );
+
 const userSchema = new Schema(
 	{
 		username: {
@@ -20,6 +28,7 @@ const userSchema = new Schema(
 			required: true,
 			minLength: 8
 		},
+		// scores: [scores],
 		latestScore: {
 			type: Number,
 		},
@@ -28,7 +37,7 @@ const userSchema = new Schema(
 			// we don't define the reference to Highscores model here, do it in the typeDefs
 			ref: "Highscores"
 		}],
-	}
+	},
 );
 
 // middleware to create a password

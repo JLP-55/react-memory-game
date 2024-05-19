@@ -69,6 +69,8 @@ function Game() {
 	// useState for user choices, set to an empty string, not null so that there is an initial value that can be read
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
+	// useState for disabling a card
+	const [disable, setDisable] = useState(false);
 
 	// randomise images 
 	const randomise = () => {
@@ -93,7 +95,9 @@ function Game() {
 	// compare two cards
 	// use effect will fire initially upon page load, and again when a dependancy changes
 	useEffect(() => {
+		// setDisable(true);
 			if (choiceOne && choiceTwo) {
+			// setDisable(true);
 				if (
 					choiceOne.src === deck[0]["src"] && choiceTwo.src === deck[0]["matchId"]
 					|| /*OR...*/
@@ -600,17 +604,23 @@ function Game() {
 					console.log("match");
 					resetTurn();
 				} else {
-					resetTurn();
+					// display the selection momentarily
+					setTimeout(() => {
+						resetTurn();
+					}, 1000)
 					console.log("no match")
 				}
 			};
 	}, [choiceOne, choiceTwo]);
 
 	// reset choice and update turn
+	// increment turns
+	// reset disable to false
 	const resetTurn = () => {
 		setChoiceOne(null);
 		setChoiceTwo(null);
 		setTurns(prevTurns => prevTurns +1);
+		setDisable(false);
 		// console.log(choiceOne.src);
 		// console.log(choiceTwo.src);
 		// console.log(choiceTwo.matchId);
@@ -630,6 +640,13 @@ function Game() {
 							key={card.id} 
 							card={card}
 							handleChoiceEvent={choiceEvent}
+							flipped={
+								// flipped prop is true if it is equal in any of the below conditions
+								card === choiceOne || 
+								card === choiceTwo || 
+								card.matched
+							}
+							disable={disable}
 						/>
 					))}
 				</div>

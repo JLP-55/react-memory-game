@@ -2,15 +2,15 @@ import "./singleCard.css";
 import App from "../pages/game.jsx"
 
 /*pass a prop "card" to the SingleCard function so that we can render images*/
-function SingleCard({card, handleChoiceEvent}) {
+function SingleCard({card, handleChoiceEvent, flipped}) {
 
 	const clickEvent = () => {
-		handleChoiceEvent(card)
-	}
+			handleChoiceEvent(card)
+	};
 
 	return (
 		<div className="card">
-			<div>
+			<div className={flipped ? "flipped" : ""}>
 				{/*will render the front and back of each card image.*/}
 				<img 
 					className="front" 
