@@ -47,7 +47,7 @@ Here is a [link](https://github.com/JLP-55/react-memory-game) to the Github repo
 
 **a brief view of the application displayed in the browser, showing the matching cards a player has found**
 
-<img src="./images/screenshot.PNG" width="650px" height="100%">
+<img src="./images/screenshot.PNG" width="950px" height="100%">
 
 ### Features
 
