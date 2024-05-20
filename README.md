@@ -1,112 +1,72 @@
-## TODO next:
+# A Game of Memory
 
-- go through week18 homework to set up the schemas? At least use the models as some kind of scaffold for models in this react application
+### Table of contents
 
-**currently:**
-- am unable to sign in, receive an error on the front end. See comments in `client/src/pages/signup` and look at the variable `handle form submit`
+[Description](#description)<br>
+[Side note](#side-note)<br>
+[Installation](#installation)<br>
+[How to play](#how-to-play)<br>
+[Links](#links)<br>
+[Screenshots](#screenshots)<br>
+[Features](#features)<br>
+[Future development](#future-development)<br>
+[Technologies used](#technologies-used)<br>
+[Credits](#credits)<br>
+[Licence](#licence)
 
-**TODO**
-- enable PWA functionality
-- finish front-end and the memory game
-- find and look into the activity `tech thoughts`/`whats on your techy mind` for how to do user authentication/decode with JWT's `week21/day_03/activity_24`
-- don't forget about week 18 for mongoose activities to refer to
-- don't forget about week 19 for pwa activities to refer to
+## Description
 
-### Presentation requirments
+This is the final project for coding bootcamp where we were required to build a full stack web application using React as the view engine, as well as various node.js packages for the back end.<br>
+While in theory this is a relativly simple project, it should serve as a great way to piece together all that has been learned over the past six monthes into a fully featured web application.<br>
 
-- elevator pitch
-- concept - description, motivation, user story
-- process - technologies challenges, successes
-- demonstration
-- future development - other features,
-- links to deployed application, repo
-
-### Project Description
-
-This will be an online game of memory (collect pairs of cards to score points from a standard 52 card deck, laid face down)<br>
-The goal will be to also have a way for users to play with other players who are online, as well as be able to take the application offline as a progressive web app<br>
-
-### Project requirments
-
-* Use React for the front end.
-
-* Use GraphQL with a Node.js and Express.js server.
-
-* Use MongoDB and the Mongoose ODM for the database.
-
-* Use queries and mutations for retrieving, adding, updating, and deleting data.
-
-* Be deployed using Heroku (with data).
-
-* Have a polished UI.
-
-* Be responsive.
-
-* Be interactive (i.e., accept and respond to user input).
-
-* Include authentication (JWT).
-
-* Protect sensitive API key information on the server.
-
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
-
-* Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-### User story
-
-As a boardgame enthusiast, I would like to be able to play online, so that I can interact with other fellow board game enthusiasts. 
-
-### Acceptance Criteria
-
-When I open the game in the browser,<br>
-Then I see the game of memory set up and ready to play.<br>
-When I want start the game,<br>
-Then I can turn over the first pair of tiles to begin my turn.<br>
-When I get a match of cards,<br>
-Then my score increases by one.<br>
-When I find all the matches,<br>
-Then the amount of turns it took me to finish the game are displayed.<br>
-When I want to play with other players,<br>
-Then I have to sign up and create an account.<br>
-When I play against other players,<br>
-Then I have to take turns with them.<br>
-When I find a match against an online player,<br>
-Then my score increases by one AND I get another turn.<br>
-When I either win or loose against a player,<br>
-Then my running win/loss tally is updated.<br>
-When I want to play offline against a person in real life,<br>
-Then I can install the application and play without an internet connection, taking turns with another player on the same machine.<br>
-
-# DELETE EVERYTHING ABOVE BEFORE SUBMITING
-
-### Description
-
-This is the final project for coding bootcamp where we were required to build a full stack web application using React.<br>
-I have chosen a relativly simple project, an online game of memory, where you turn over cards and collect matches when you come across them.<br>
+#### Side note
+This project is in an unfinished state, with only a minimal number of the overall planned features implemented. There are plenty more features coming but as of now, only a basic application exists.<br>
 
 ### Installation
 
-Should you wish to install the source code and add to this project, simply:<br>
+Should you wish to install the source code and add to this project, or even modify it for your own purposes, simply:<br>
 
 - clone the repository
 - navigate to the directory
-- run `npm install`from the root directory <!-- test that this command actually works from a fresh git clone directory -->
-- then run `npm run start`from the same directory
+- run `npm install` from the root directory 
+- then run `npm run develop` from the same directory to get the project up and running
 
 You should have a working version of the application ready test and make changes to.
 
-### Deployed application
+### How to play
 
-Here is a [link](https://link.com) to the live webpage
+The basics of the game are quite simple, you turn over cards and collect matches when you come across them.<br>
+You will only be able to match similar colours with their equivalent numbers, so the ten of hearts and diamonds are a legitimate match, as are the five of clubs and spades.
+
+### Links
+
+Here is a [link](https://memory-game-react-app-d89d6af4da07.herokuapp.com/) to the live webpage<br>
+Here is a [link](https://github.com/JLP-55/react-memory-game) to the Github repository
 
 ### Screenshots
 
+**a brief view of the application displayed in the browser, showing the matching cards a player has found**
+
+<img src="./images/screenshot.PNG" width="650px" height="100%">
+
 ### Features
 
-In using this application, you will be able to create an an account (in fact, you will be required to sign up to view the rest of the application), and after doing so, will then be able to start/restart a game, by pressing the start game and randomise cards buttons respectively.<br>
-###### Future development?
-The user will also be able to keep track of how many turns they have taken as well as the wins and losses they have accrued against other players.<br>
-Furthermore, the user will be able to download the application and use it offline, without requiring an internet connection.<br>
+In using this application, you will be able to create an an account (in fact, you will be required to sign up to view the rest of the application)<br> 
+After doing so, will then be able to start/restart a game, by pressing the start game and randomise cards buttons respectively.<br>
+Upon starting a new game, the user will be prompted to flip cards over to find a match.<br>
+Once matches have been found, the matched cards will remain in the face up position.<br>
+If all matches have been found, the user will be able to begin a new game by pressing the randomise cards button, or, can begin a new game whenever they like.
+
+### Future development
+
+As stated above in the project description, only a minimal number of the overall amount of features intended to be implemented are actually present in this version of the project.<br>
+In future versions of this application, the user should be able to:
+
+- Play against other players online
+- Keep track of how many turns they have taken as well as the wins and losses they have accrued against other players
+- Have their scores displayed on the overall player leaderboard
+- Chat to other players online
+- Create friend requests for other players, as well as block other players if they so desire
 
 ### Technologies used
 
@@ -122,6 +82,7 @@ _Server_
 -    ["graphql"](https://www.npmjs.com/package/graphql)
 -    ["jsonwebtoken"](https://www.npmjs.com/package/jsonwebtoken)
 -    ["mongoose"](https://www.npmjs.com/package/mongoose)
+
 _Client_
 -    ["@apollo/client"](https://www.npmjs.com/package/@apollo/client)
 -    ["jwt-decode"](https://www.npmjs.com/package/jwt-decode)
@@ -133,6 +94,7 @@ _Client_
 
 _Server_
 -    ["nodemon": "^3.1.0"](https://www.npmjs.com/package/nodemon)
+
 _Client_
 -	 ["@types/react": "^18.2.15",](https://www.npmjs.com/package/@types/react)
 -	 ["@types/react-dom": "^18.2.7",](https://www.npmjs.com/package/@types/react-dom)
@@ -145,7 +107,8 @@ _Client_
 
 ### Credits
 
-I was heavily inspired by the video series [Make a memory game with React](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm) by Net Ninja for much of the front end source code. Follow the link to see his work or for a step by step guide on the creation of your own version of this application.
+I was heavily inspired by the video series [Make a memory game with React](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm) by Net Ninja for much of the front end source code.<br> 
+Follow the link to see his work or for a step by step guide on the creation of your own version of this application.
 
 ### Licence
 MIT Licence
